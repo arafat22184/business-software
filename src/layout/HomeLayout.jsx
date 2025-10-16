@@ -8,21 +8,25 @@ import FAQ from "../component/FAQ";
 import Schedule from "../component/Schedule";
 import Footer from "../component/Footer";
 import { useInView } from "react-intersection-observer";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/DataProvider";
 
 const HomeLayout = () => {
   const { setActiveSection, activeSection } = useContext(AuthContext);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
 
-  if (inView) {
-    setActiveSection("how");
-  }
-
-  console.log(activeSection);
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("how");
+    } else {
+      setActiveSection(null);
+    }
+  }, [inView]);
 
   return (
-    <div className="custom-scrollbar overflow-y-auto h-screen">
+    <div className="custom-scrollbar overflow-y-auto h-screen poppins">
       <Navbar />
       {/* Banner */}
       <Banner />

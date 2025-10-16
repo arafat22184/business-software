@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DemoPolygonSVG } from "./SVG/HomePageSVG";
 import { useInView } from "react-intersection-observer";
 import { AuthContext } from "../provider/DataProvider";
 
 const Demo = () => {
   const { setActiveSection } = useContext(AuthContext);
-  const { ref, inView } = useInView();
-  if (inView) {
-    setActiveSection("demo");
-  }
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("demo");
+    }
+  }, [inView]);
   return (
     <section id="demo" ref={ref} className="mt-[146px] relative">
       <div className="max-w-7xl mx-auto flex flex-col items-center">

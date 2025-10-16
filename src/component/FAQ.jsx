@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import FAQCard from "./FAQCard";
 import { AuthContext } from "../provider/DataProvider";
 import { useInView } from "react-intersection-observer";
@@ -6,9 +6,12 @@ import { useInView } from "react-intersection-observer";
 const FAQ = () => {
   const { setActiveSection } = useContext(AuthContext);
   const { ref, inView } = useInView();
-  if (inView) {
-    setActiveSection("faq");
-  }
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("faq");
+    }
+  }, [inView]);
 
   const faqs = [
     {
