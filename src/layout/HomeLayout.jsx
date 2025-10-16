@@ -7,6 +7,7 @@ import TeamThree from "../component/TeamThree";
 import Demo from "../component/Demo";
 import FAQ from "../component/FAQ";
 import Schedule from "../component/Schedule";
+import Footer from "../component/Footer";
 
 const HomeLayout = () => {
   return (
@@ -28,6 +29,9 @@ const HomeLayout = () => {
 
       {/* Schedule */}
       <Schedule />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
