@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../shared/Navbar";
 import Banner from "../component/Banner";
 import TeamOne from "../component/TeamOne";
@@ -8,14 +7,26 @@ import Demo from "../component/Demo";
 import FAQ from "../component/FAQ";
 import Schedule from "../component/Schedule";
 import Footer from "../component/Footer";
+import { useInView } from "react-intersection-observer";
+import { useContext } from "react";
+import { AuthContext } from "../provider/DataProvider";
 
 const HomeLayout = () => {
+  const { setActiveSection, activeSection } = useContext(AuthContext);
+  const { ref, inView } = useInView();
+
+  if (inView) {
+    setActiveSection("how");
+  }
+
+  console.log(activeSection);
+
   return (
     <div className="custom-scrollbar overflow-y-auto h-screen">
       <Navbar />
       {/* Banner */}
       <Banner />
-      <section id="how">
+      <section ref={ref} id="how">
         {/* Team  */}
         <TeamOne />
         <TeamTwo />

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { DemoPolygonSVG } from "./SVG/HomePageSVG";
+import { useInView } from "react-intersection-observer";
+import { AuthContext } from "../provider/DataProvider";
 
 const Demo = () => {
+  const { setActiveSection } = useContext(AuthContext);
+  const { ref, inView } = useInView();
+  if (inView) {
+    setActiveSection("demo");
+  }
   return (
-    <section id="demo" className="mt-[146px] relative">
+    <section id="demo" ref={ref} className="mt-[146px] relative">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Title*/}
         <h4 className="font-semibold text-5xl text-[#192A48] mb-14">
@@ -14,10 +21,10 @@ const Demo = () => {
           className="min-w-[1232px] min-h-[691px] rounded-lg"
           src="https://www.youtube.com/embed/ag7HXbgJtuk?si=pHghqdKde95T6cKm"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
         <p className="font-medium text-[#798090] text-center max-w-[1065px] mt-8">
           "Transform the way you work with our exclusive software sale! 🚀 Save

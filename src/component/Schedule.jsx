@@ -1,8 +1,10 @@
 import React from "react";
 import { Calendar } from "@/components/ui/calendar";
+import { Link } from "react-router";
 
 const Schedule = () => {
   const [date, setDate] = React.useState(new Date());
+
   return (
     <section className="py-[112px] bg-[#F2F1F1]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -16,9 +18,13 @@ const Schedule = () => {
           <p className="text-[#192A48] text-xl pt-6 pb-10">
             See how to grow your product faster with deep customer insights.
           </p>
-          <button className="bg-[#253FB6] text-white text-lg font-semibold rounded-[1332px] px-12 py-4 cursor-pointer hover:bg-[#3953c7]">
+          <Link
+            state={date}
+            to={"/contact"}
+            className="bg-[#253FB6] text-white text-lg font-semibold rounded-[1332px] px-12 py-4 cursor-pointer hover:bg-[#3953c7]"
+          >
             Schedule
-          </button>
+          </Link>
         </div>
         {/* Calender */}
         <div>

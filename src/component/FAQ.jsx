@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import FAQCard from "./FAQCard";
+import { AuthContext } from "../provider/DataProvider";
+import { useInView } from "react-intersection-observer";
 
 const FAQ = () => {
+  const { setActiveSection } = useContext(AuthContext);
+  const { ref, inView } = useInView();
+  if (inView) {
+    setActiveSection("faq");
+  }
+
   const faqs = [
     {
       id: 1,
@@ -56,7 +64,11 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="mt-[150px] mb-23.5 max-w-7xl mx-auto">
+    <section
+      id="faq"
+      ref={ref}
+      className="mt-[150px] mb-23.5 max-w-7xl mx-auto"
+    >
       {/* Title */}
       <h3 className="text-[#192A48] font-semibold text-center text-5xl">
         Frequently Asked Questions

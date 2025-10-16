@@ -20,10 +20,10 @@ export const BannerPolygonSVG = ({ className }) => {
           y2="633.679"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B5B3FF" />
-          <stop offset="0.18" stop-color="#EDECFF" stop-opacity="0" />
-          <stop offset="0.49" stop-color="#E7E6FE" stop-opacity="0.2" />
-          <stop offset="1" stop-color="#A7A4FF" />
+          <stop stopColor="#B5B3FF" />
+          <stop offset="0.18" stopColor="#EDECFF" stopOpacity="0" />
+          <stop offset="0.49" stopColor="#E7E6FE" stopOpacity="0.2" />
+          <stop offset="1" stopColor="#A7A4FF" />
         </linearGradient>
       </defs>
     </svg>
@@ -52,10 +52,10 @@ export const TeamPolygonSVG = ({ className }) => {
           y2="542.812"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B5B3FF" />
-          <stop offset="0.18" stop-color="#EDECFF" stop-opacity="0" />
-          <stop offset="0.49" stop-color="#E7E6FE" stop-opacity="0.2" />
-          <stop offset="1" stop-color="#A7A4FF" />
+          <stop stopColor="#B5B3FF" />
+          <stop offset="0.18" stopColor="#EDECFF" stopOpacity="0" />
+          <stop offset="0.49" stopColor="#E7E6FE" stopOpacity="0.2" />
+          <stop offset="1" stopColor="#A7A4FF" />
         </linearGradient>
       </defs>
     </svg>
@@ -84,10 +84,10 @@ export const DemoPolygonSVG = ({ className }) => {
           y2="409.177"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B5B3FF" />
-          <stop offset="0.18" stop-color="#EDECFF" stop-opacity="0" />
-          <stop offset="0.49" stop-color="#E7E6FE" stop-opacity="0.2" />
-          <stop offset="1" stop-color="#A7A4FF" />
+          <stop stopColor="#B5B3FF" />
+          <stop offset="0.18" stopColor="#EDECFF" stopOpacity="0" />
+          <stop offset="0.49" stopColor="#E7E6FE" stopOpacity="0.2" />
+          <stop offset="1" stopColor="#A7A4FF" />
         </linearGradient>
       </defs>
     </svg>
