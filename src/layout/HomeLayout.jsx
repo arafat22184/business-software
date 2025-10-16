@@ -6,6 +6,7 @@ import TeamTwo from "../component/TeamTwo";
 import TeamThree from "../component/TeamThree";
 import Demo from "../component/Demo";
 import FAQ from "../component/FAQ";
+import Schedule from "../component/Schedule";
 
 const HomeLayout = () => {
   return (
@@ -24,6 +25,9 @@ const HomeLayout = () => {
 
       {/* FAQ */}
       <FAQ />
+
+      {/* Schedule */}
+      <Schedule />
     </div>
   );
 };
