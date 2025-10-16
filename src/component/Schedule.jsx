@@ -2,14 +2,16 @@ import React from "react";
 import { Calendar } from "@/components/ui/calendar";
 
 const Schedule = () => {
-  const date = new Date();
+  const [date, setDate] = React.useState(new Date());
   return (
     <section className="py-[112px] bg-[#F2F1F1]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Title Description */}
         <div>
           <h3 className="text-[#192A48] text-5xl font-semibold">
-            Get a demo of customer data
+            Get a demo of customer
+            <br className="hidden md:block" />
+            data
           </h3>
           <p className="text-[#192A48] text-xl pt-6 pb-10">
             See how to grow your product faster with deep customer insights.
@@ -23,7 +25,9 @@ const Schedule = () => {
           <Calendar
             mode="single"
             selected={date}
-            className="rounded-lg border"
+            onSelect={setDate}
+            className="rounded-md border shadow-sm min-w-[563px]"
+            captionLayout="dropdown"
           />
         </div>
       </div>
