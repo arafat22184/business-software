@@ -23,7 +23,7 @@ const Banner = () => {
         <BannerPolygonSVG className={"absolute bottom-0 -z-50"} />
         <img
           src={bannerImage}
-          className="max-w-[1131px] z-50"
+          className="max-w-[1131px] z-20"
           alt="Banner Image"
         />
       </div>
