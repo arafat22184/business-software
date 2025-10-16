@@ -5,6 +5,7 @@ import TeamOne from "../component/TeamOne";
 import TeamTwo from "../component/TeamTwo";
 import TeamThree from "../component/TeamThree";
 import Demo from "../component/Demo";
+import FAQ from "../component/FAQ";
 
 const HomeLayout = () => {
   return (
@@ -20,6 +21,9 @@ const HomeLayout = () => {
       </section>
       {/* Demo */}
       <Demo />
+
+      {/* FAQ */}
+      <FAQ />
     </div>
   );
 };
