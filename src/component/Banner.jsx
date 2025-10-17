@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
 import bannerImage from "../assets/bannerImage.png";
@@ -21,6 +22,7 @@ const Banner = () => {
         Automate your business with the best in class software
       </motion.h1>
 
+      {/* Description */}
       <motion.p
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
