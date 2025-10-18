@@ -30,7 +30,7 @@ const Banner = () => {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...transition, delay: 0.6 }}
-        className="text-xl lg:text-2xl text-[#798090] mt-1 lg:mt-3 mb-5 lg:mb-10 px-4 xl:px-0"
+        className="text-lg lg:text-2xl text-[#798090] mt-1 lg:mt-3 mb-5 lg:mb-10 px-4 xl:px-0"
       >
         "LeadTalk empowers sales and marketing teams to identify and prioritize
         high-fit accounts,
