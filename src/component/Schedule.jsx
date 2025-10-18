@@ -81,7 +81,7 @@ const Schedule = () => {
 
   const labelStyle = "text-[#192A48] text-[20px] font-medium";
   const inputStyle =
-    "border border-[#DFE0E4] rounded-[5px] w-full pl-6 mt-[10px] text-2xl py-2";
+    "border border-[#DFE0E4] rounded-[5px] w-full pl-2 lg:pl-4 xl:pl-6 mt-[10px] lg:text-2xl py-1 md:py-1.5 lg:py-2";
 
   return (
     <section
