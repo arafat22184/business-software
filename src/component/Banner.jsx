@@ -57,25 +57,36 @@ const Banner = () => {
           <BannerPolygonSVG />
         </motion.div>
 
-        <motion.img
-          src={bannerImage}
-          alt="Banner Image"
-          className="max-w-[1131px] w-full z-20"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{
-            opacity: 1,
-            y: [0, -20, 0],
-          }}
-          transition={{
-            opacity: { duration: 1.5, delay: 1 },
-            y: {
-              duration: 4,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "easeInOut",
-            },
-          }}
-        />
+        <div className="relative">
+          <motion.img
+            src={bannerImage}
+            alt="Banner Image"
+            className="max-w-[1131px] w-full z-20"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: 1,
+              y: [0, -20, 0],
+            }}
+            transition={{
+              opacity: { duration: 1.5, delay: 1 },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              },
+            }}
+          />
+          {/* Flare effect with animation */}
+          <motion.div
+            className="absolute inset-0 -bottom-100 left-1/5 -z-20 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+          >
+            <div className="absolute w-[800px] h-[600px] bg-[#223DAF80] blur-[300px]  hidden lg:block"></div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

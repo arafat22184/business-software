@@ -84,9 +84,12 @@ const Schedule = () => {
     "border border-[#DFE0E4] rounded-[5px] w-full pl-6 mt-[10px] text-2xl py-2";
 
   return (
-    <section id="contact" className="py-[112px] bg-[#F2F1F1]">
+    <section
+      id="contact"
+      className="py-[60px] lg:py-[112px] bg-[#F2F1F1] px-4 xl:px-0"
+    >
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-[700px]">
+        <DialogContent className="w-11/12 lg:max-w-[700px]">
           <DialogTitle className="text-3xl text-[#192A48] text-center font-semibold">
             Contact Us
           </DialogTitle>
@@ -157,25 +160,24 @@ const Schedule = () => {
           </form>
         </DialogContent>
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-0">
           {/* Left Section */}
           <motion.div
             whileInView={{ x: [-100, 0] }}
             transition={{ duration: 1.5 }}
           >
-            <h3 className="text-[#192A48] text-5xl font-semibold">
+            <h3 className="text-[#192A48] text-3xl lg:text-5xl font-semibold">
               Get a demo of customer
-              <br className="hidden md:block" />
-              data
+              <br className="hidden md:block" /> data
             </h3>
-            <p className="text-[#192A48] text-xl pt-6 pb-10">
+            <p className="text-[#192A48] text-lg lg:text-xl pt-3 lg:pt-6 pb-5 lg:pb-10">
               See how to grow your product faster with deep customer insights.
             </p>
 
             <DialogTrigger asChild>
               <button
                 onClick={() => setOpen(true)}
-                className="bg-[#253FB6] text-white text-lg font-semibold rounded-full px-12 py-4 cursor-pointer hover:bg-[#3953c7] transition"
+                className="bg-[#253FB6] text-white lg:text-lg font-semibold rounded-full px-6 lg:px-12 py-2 lg:py-4 cursor-pointer hover:bg-[#3953c7] transition"
               >
                 Schedule
               </button>
@@ -191,7 +193,7 @@ const Schedule = () => {
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="rounded-[22px] border shadow-sm min-w-[430px] p-6"
+              className="rounded-[22px] border shadow-sm min-w-11/12 lg:min-w-[430px] p-6"
               captionLayout="dropdown"
             />
           </motion.div>

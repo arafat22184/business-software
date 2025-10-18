@@ -6,7 +6,17 @@ import SectionTitle from "./common/SectionTitle";
 
 const TeamThree = () => {
   return (
-    <div className="bg-[#2F48B7] py-20 xl:py-40">
+    <div className="bg-[#2F48B7] py-20 xl:py-40 relative">
+      {/* Flare effect with animation */}
+      <motion.div
+        className="absolute inset-0 -top-50 -left-100 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+      >
+        <div className="absolute w-[600px] h-[600px] bg-pink-300/20 blur-[90px] rounded-full hidden lg:block"></div>
+      </motion.div>
+
       <div className="max-w-7xl mx-auto flex flex-col-reverse justify-center items-center xl:flex-row xl:justify-between gap-8 xl:gap-17 px-4 xl:px-0">
         <motion.div
           whileInView={{ x: [-100, 0] }}

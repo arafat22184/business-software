@@ -74,7 +74,7 @@ const FAQ = () => {
     <section
       id="faq"
       ref={ref}
-      className="mt-[150px] mb-10 xl:mb-23.5 max-w-7xl mx-auto px-4 xl:px-0"
+      className="mt-[70px] lg:mt-[150px] mb-10 xl:mb-23.5 max-w-7xl mx-auto px-4 xl:px-0"
     >
       {/* Title */}
       <h3 className="text-[#192A48] font-semibold text-center text-3xl xl:text-5xl">
