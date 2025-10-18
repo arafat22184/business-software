@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import teamTwo from "../assets/teamTwo.png";
 import SectionTitle from "./common/SectionTitle";
 import { TeamPolygonSVG } from "./SVG/HomePageSVG";
@@ -8,10 +9,20 @@ const TeamTwo = () => {
     <div className="py-40 relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-17">
         {/* Image  */}
-        <img src={teamTwo} className="w-[729px]" alt="team two image" />
+        <motion.img
+          whileInView={{ x: [-100, 0] }}
+          transition={{ duration: 1.5 }}
+          src={teamTwo}
+          className="w-[729px]"
+          alt="team two image"
+        />
 
         {/* Description */}
-        <div className="space-y-6">
+        <motion.div
+          whileInView={{ x: [100, 0] }}
+          transition={{ duration: 1.5 }}
+          className="space-y-6"
+        >
           <SectionTitle
             caption={"Stop chasing wrong leads"}
             className={"border-[#2F48B7] text-[#192A48]"}
@@ -25,9 +36,9 @@ const TeamTwo = () => {
             target accounts manually. Without the right insights, your efforts
             are scattered, and opportunities slip through the cracks
           </p>
-        </div>
+        </motion.div>
       </div>
-      <TeamPolygonSVG className={"absolute bottom-0"} />
+      <TeamPolygonSVG className={"absolute bottom-0 -z-20"} />
     </div>
   );
 };

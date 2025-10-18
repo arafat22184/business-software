@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { motion } from "motion/react";
 import { DemoPolygonSVG } from "./SVG/HomePageSVG";
 import { useInView } from "react-intersection-observer";
 import { AuthContext } from "../provider/DataProvider";
@@ -12,11 +13,19 @@ const Demo = () => {
   useEffect(() => {
     if (inView) {
       setActiveSection("demo");
+    } else {
+      setActiveSection("null");
     }
   }, [inView]);
   return (
     <section id="demo" ref={ref} className="mt-[146px] relative">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 1.5 }}
+        className="max-w-7xl mx-auto flex flex-col items-center"
+      >
         {/* Title*/}
         <h4 className="font-semibold text-5xl text-[#192A48] mb-14">
           Watch the demo
@@ -39,7 +48,7 @@ const Demo = () => {
           limited-time offer ends soon! Visit [website/link] now and elevate
           your workflow today!"
         </p>
-      </div>
+      </motion.div>
       <DemoPolygonSVG className={"absolute bottom-0 -z-30"} />
     </section>
   );

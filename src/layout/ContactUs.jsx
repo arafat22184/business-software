@@ -4,57 +4,9 @@ import { toast } from "react-toastify";
 
 const ContactUs = () => {
   const { state } = useLocation();
-  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const description = form.description.value.trim();
-
-    if (!name || !email || !description) {
-      toast.error("⚠️ Please fill in all required fields before submitting!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      return;
-    }
-
-    const scheduleDate = new Date(state).toLocaleString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    navigate("/");
-
-    toast.success(`You are scheduled for ${scheduleDate}`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  };
-  const labelStyle = "text-[#192A48] text-[26px] font-normal";
-  const inputStyle =
-    "border border-[#DFE0E4] rounded-[5px] w-full pl-6 mt-[10px] text-2xl py-2";
   return (
-    <div className="w-svw h-svh bg-[#EBEEF1] flex items-center justify-center flex-col poppins">
+    <div className="bg-[#EBEEF1] flex items-center justify-center flex-col poppins">
       <div className="bg-white rounded-2xl p-11.5">
         <h1 className="text-5xl text-[#192A48] text-center font-semibold">
           Contact Us

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import teamThree from "../assets/teamThree.png";
 import SectionTitle from "./common/SectionTitle";
 
@@ -6,7 +7,11 @@ const TeamThree = () => {
   return (
     <div className="bg-[#2F48B7] py-40 ">
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-17">
-        <div className="space-y-6">
+        <motion.div
+          whileInView={{ x: [-100, 0] }}
+          transition={{ duration: 1.5 }}
+          className="space-y-6"
+        >
           <SectionTitle
             caption={"Stop chasing wrong leads"}
             className={"text-white border-white"}
@@ -19,8 +24,14 @@ const TeamThree = () => {
             target accounts manually. Without the right insights, your efforts
             are scattered, and opportunities slip through the cracks.
           </p>
-        </div>
-        <img src={teamThree} className="w-[729px]" alt="team one image" />
+        </motion.div>
+        <motion.img
+          whileInView={{ x: [100, 0] }}
+          transition={{ duration: 1.5 }}
+          src={teamThree}
+          className="w-[729px]"
+          alt="team one image"
+        />
       </div>
     </div>
   );

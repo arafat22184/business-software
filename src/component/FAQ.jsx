@@ -5,11 +5,15 @@ import { useInView } from "react-intersection-observer";
 
 const FAQ = () => {
   const { setActiveSection } = useContext(AuthContext);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView) {
       setActiveSection("faq");
+    } else {
+      setActiveSection("null");
     }
   }, [inView]);
 
