@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import HomeLayout from "./layout/HomeLayout.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import ContactUs from "./layout/ContactUs.jsx";
 import { ToastContainer } from "react-toastify";
 import DataProvider from "./provider/DataProvider.jsx";
 
@@ -11,10 +10,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
-  },
-  {
-    path: "/contact",
-    Component: ContactUs,
   },
 ]);
 

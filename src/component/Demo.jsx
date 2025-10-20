@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { motion } from "motion/react";
 import { DemoPolygonSVG } from "./SVG/HomePageSVG";
 import { useInView } from "react-intersection-observer";
 import { AuthContext } from "../provider/DataProvider";
@@ -12,18 +13,26 @@ const Demo = () => {
   useEffect(() => {
     if (inView) {
       setActiveSection("demo");
+    } else {
+      setActiveSection("null");
     }
   }, [inView]);
   return (
-    <section id="demo" ref={ref} className="mt-[146px] relative">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+    <section id="demo" ref={ref} className="mt-[50px] xl:mt-[146px] relative">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 1.5 }}
+        className="xl:max-w-7xl mx-auto flex flex-col items-center px-4"
+      >
         {/* Title*/}
-        <h4 className="font-semibold text-5xl text-[#192A48] mb-14">
+        <h4 className="font-semibold text-3xl lg:text-5xl text-[#192A48] mb-7 lg:mb-14">
           Watch the demo
         </h4>
         {/* Iframe */}
         <iframe
-          className="min-w-[1232px] min-h-[691px] rounded-lg"
+          className="min-w-11/12 min-h-[250px] md:min-h-[350px] lg:min-h-[450px]  xl:min-w-[1232px] xl:min-h-[691px] rounded-lg"
           src="https://www.youtube.com/embed/ag7HXbgJtuk?si=pHghqdKde95T6cKm"
           title="YouTube video player"
           frameBorder="0"
@@ -31,7 +40,7 @@ const Demo = () => {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
-        <p className="font-medium text-[#798090] text-center max-w-[1065px] mt-8">
+        <p className="font-medium text-[#798090] text-center max-w-[1065px] mt-4 lg:mt-8">
           "Transform the way you work with our exclusive software sale! 🚀 Save
           up to [X]% on powerful tools designed to boost your productivity,
           creativity, and efficiency. From [feature 1] to [feature 2], our
@@ -39,7 +48,7 @@ const Demo = () => {
           limited-time offer ends soon! Visit [website/link] now and elevate
           your workflow today!"
         </p>
-      </div>
+      </motion.div>
       <DemoPolygonSVG className={"absolute bottom-0 -z-30"} />
     </section>
   );

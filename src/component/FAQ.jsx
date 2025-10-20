@@ -5,11 +5,15 @@ import { useInView } from "react-intersection-observer";
 
 const FAQ = () => {
   const { setActiveSection } = useContext(AuthContext);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView) {
       setActiveSection("faq");
+    } else {
+      setActiveSection("null");
     }
   }, [inView]);
 
@@ -70,19 +74,19 @@ const FAQ = () => {
     <section
       id="faq"
       ref={ref}
-      className="mt-[150px] mb-23.5 max-w-7xl mx-auto"
+      className="mt-[70px] lg:mt-[150px] mb-10 xl:mb-23.5 max-w-7xl mx-auto px-4 xl:px-0"
     >
       {/* Title */}
-      <h3 className="text-[#192A48] font-semibold text-center text-5xl">
+      <h3 className="text-[#192A48] font-semibold text-center text-3xl xl:text-5xl">
         Frequently Asked Questions
       </h3>
       {/* Sub-Title */}
-      <p className="text-[#798090] text-2xl text-center mt-4 mb-16">
+      <p className="text-[#798090] text-lg xl:text-2xl text-center mt-4 mb-8 lg:mb-16">
         Have another question? Contact us on Twitter or by email
       </p>
 
       {/* faqs */}
-      <div className="space-y-6">
+      <div className="space-y-3 xl:space-y-6">
         {faqs.map((faq) => (
           <FAQCard faq={faq} key={faq.id} />
         ))}

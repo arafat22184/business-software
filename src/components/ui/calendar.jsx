@@ -134,16 +134,23 @@ function Calendar({
         Chevron: ({ className, orientation, ...props }) => {
           if (orientation === "left") {
             return (
-              <ChevronLeftIcon className={cn("size-4", className)} {...props} />
+              <div className="p-2 bg-slate-200 rounded-full cursor-pointer">
+                <ChevronLeftIcon
+                  className={cn("size-4", className)}
+                  {...props}
+                />
+              </div>
             );
           }
 
           if (orientation === "right") {
             return (
-              <ChevronRightIcon
-                className={cn("size-4", className)}
-                {...props}
-              />
+              <div className="p-2 bg-slate-200 rounded-full cursor-pointer">
+                <ChevronRightIcon
+                  className={cn("size-4", className)}
+                  {...props}
+                />
+              </div>
             );
           }
 
