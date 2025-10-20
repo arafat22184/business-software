@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Navbar from "../shared/Navbar";
 import Banner from "../component/Banner";
 import TeamOne from "../component/TeamOne";
@@ -10,9 +11,10 @@ import Footer from "../component/Footer";
 import { useInView } from "react-intersection-observer";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/DataProvider";
+import CarouselCard from "../component/CarouselCard";
 
 const HomeLayout = () => {
-  const { setActiveSection, activeSection } = useContext(AuthContext);
+  const { setActiveSection } = useContext(AuthContext);
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
@@ -45,6 +47,8 @@ const HomeLayout = () => {
       {/* Schedule */}
       <Schedule />
 
+      {/* Carousel */}
+      <CarouselCard />
       {/* Footer */}
       <Footer />
     </div>
